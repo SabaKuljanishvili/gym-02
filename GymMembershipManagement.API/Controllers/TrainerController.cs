@@ -48,7 +48,7 @@ namespace GymMembershipManagement.API.Controllers
 
         // Admin only - Get all schedules
         [HttpGet("AllSchedules")]
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin,Trainer")]
         public async Task<ActionResult<IEnumerable<ScheduleDTO>>> GetAllSchedules()
         {
             var schedules = await _trainerService.GetAllSchedules();
